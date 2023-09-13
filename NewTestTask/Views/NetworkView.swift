@@ -13,14 +13,31 @@ struct NetworkView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
+                if let fact = viewModel.fact?.fact {
+                    Text(fact)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.accentColor)
+                        .cornerRadius(10)
+                } else {
+                    Text("Loading facts...")
+                }
             }
+            .padding()
+            .navigationTitle("Facts")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .task {
+            await viewModel.getFacts()
+        }
+        .alert(viewModel.alertText, isPresented: $viewModel.isShowAlert) {
+            Button("OK", action: { viewModel.isShowAlert = false })
         }
     }
 }
 
 struct NetworkView_Previews: PreviewProvider {
     static var previews: some View {
-        NetworkView()
+        NetworkView(viewModel: Network())
     }
 }
