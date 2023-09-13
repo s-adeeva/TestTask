@@ -18,6 +18,8 @@
 		93DD72F32AB2530B00536D37 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 93DD72F22AB2530B00536D37 /* Realm */; };
 		93DD72F52AB2530B00536D37 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 93DD72F42AB2530B00536D37 /* RealmSwift */; };
 		93DD72F72AB253C100536D37 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD72F62AB253C100536D37 /* ToDo.swift */; };
+		93DD72F92AB257B200536D37 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD72F82AB257B200536D37 /* Fact.swift */; };
+		93DD72FB2AB257C800536D37 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD72FA2AB257C800536D37 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		93DD72ED2AB2502100536D37 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		93DD72EF2AB2503B00536D37 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		93DD72F62AB253C100536D37 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		93DD72F82AB257B200536D37 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		93DD72FA2AB257C800536D37 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				93DD72F62AB253C100536D37 /* ToDo.swift */,
+				93DD72F82AB257B200536D37 /* Fact.swift */,
+				93DD72FA2AB257C800536D37 /* Network.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,7 +188,9 @@
 				93DD72EA2AB24FF700536D37 /* StorageView.swift in Sources */,
 				93DD72F72AB253C100536D37 /* ToDo.swift in Sources */,
 				93DD72EC2AB2500A00536D37 /* NetworkView.swift in Sources */,
+				93DD72F92AB257B200536D37 /* Fact.swift in Sources */,
 				93DD72EE2AB2502100536D37 /* ButtonView.swift in Sources */,
+				93DD72FB2AB257C800536D37 /* Network.swift in Sources */,
 				93DD72F02AB2503B00536D37 /* WebView.swift in Sources */,
 				93DD72DC2AB24D9D00536D37 /* ContentView.swift in Sources */,
 				93DD72DA2AB24D9D00536D37 /* NewTestTaskApp.swift in Sources */,
