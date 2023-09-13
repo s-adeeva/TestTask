@@ -17,6 +17,7 @@
 		93DD72F02AB2503B00536D37 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD72EF2AB2503B00536D37 /* WebView.swift */; };
 		93DD72F32AB2530B00536D37 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 93DD72F22AB2530B00536D37 /* Realm */; };
 		93DD72F52AB2530B00536D37 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 93DD72F42AB2530B00536D37 /* RealmSwift */; };
+		93DD72F72AB253C100536D37 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD72F62AB253C100536D37 /* ToDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		93DD72EB2AB2500A00536D37 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
 		93DD72ED2AB2502100536D37 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		93DD72EF2AB2503B00536D37 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		93DD72F62AB253C100536D37 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		93DD72E72AB24F8000536D37 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				93DD72F62AB253C100536D37 /* ToDo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93DD72EA2AB24FF700536D37 /* StorageView.swift in Sources */,
+				93DD72F72AB253C100536D37 /* ToDo.swift in Sources */,
 				93DD72EC2AB2500A00536D37 /* NetworkView.swift in Sources */,
 				93DD72EE2AB2502100536D37 /* ButtonView.swift in Sources */,
 				93DD72F02AB2503B00536D37 /* WebView.swift in Sources */,

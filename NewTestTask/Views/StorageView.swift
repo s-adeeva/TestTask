@@ -6,10 +6,45 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct StorageView: View {
+    @ObservedResults(ToDo.self) var toDos
+    @State private var name: String = ""
+    @FocusState private var focus: Bool?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                HStack {
+                    TextField("New ToDo", text: $name)
+                        .focused($focus, equals: true)
+                        .textFieldStyle(.roundedBorder)
+                    Button {
+                        onTapSave()
+                    } label: {
+                        Text("Save")
+                            .padding(.horizontal, 10)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .disabled(name.isEmpty)
+                }
+                .padding()
+                List(toDos) { toDo in
+                    Text(toDo.name)
+                        .listRowSeparator(.hidden)
+                }
+                .listStyle(.grouped)
+            }
+            .navigationTitle("Things to do")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+    
+    private func onTapSave() {
+        $toDos.append(ToDo(name: name))
+        name = ""
+        focus = nil
     }
 }
 
