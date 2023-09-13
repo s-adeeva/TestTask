@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct Fact: Decodable {
+    var fact: String
+}

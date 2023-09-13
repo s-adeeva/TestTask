@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = Network()
+    @AppStorage("status") var status = false
+    
     var body: some View {
         Group {
             NavigationStack {
@@ -16,7 +19,7 @@ struct ContentView: View {
                         .tabItem {
                             Label("To Do", systemImage: "square.and.arrow.down")
                         }
-                    NetworkView()
+                    NetworkView(viewModel: viewModel)
                         .tabItem {
                             Label("New facts", systemImage: "book.fill")
                         }
