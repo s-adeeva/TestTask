@@ -30,7 +30,8 @@ struct NetworkView: View {
         .task {
             await viewModel.getFacts()
         }
-        .alert(viewModel.alertText, isPresented: $viewModel.isShowAlert) {
+        .alert(viewModel.alertText,
+               isPresented: $viewModel.isShowAlert) {
             Button("OK", action: { viewModel.isShowAlert = false })
         }
     }

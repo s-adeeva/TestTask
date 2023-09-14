@@ -16,12 +16,14 @@ struct WebView: UIViewRepresentable {
         let webView = WKWebView()
         webView.navigationDelegate = context.coordinator
         
+        // for handling swipe left gesture
         let swipeLeftGesture = UISwipeGestureRecognizer(
             target: context.coordinator,
             action: #selector(context.coordinator.handleSwipeGesture(_:)))
         swipeLeftGesture.direction = .left
         webView.addGestureRecognizer(swipeLeftGesture)
         
+        // for handling swipe right gesture
         let swipeRightGesture = UISwipeGestureRecognizer(
             target: context.coordinator,
             action: #selector(context.coordinator.handleSwipeGesture(_:)))
@@ -30,7 +32,6 @@ struct WebView: UIViewRepresentable {
         
         return webView
     }
-    
     
     func updateUIView(_ webView: WKWebView, context: Context) {
         let request = URLRequest(url: url)
