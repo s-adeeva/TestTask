@@ -25,7 +25,9 @@ final class Network: ObservableObject {
         do {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
             let decodedFacts = try Self.decoder.decode([Fact].self, from: data)
-            self.fact = decodedFacts.first
+            DispatchQueue.main.async {
+                self.fact = decodedFacts.first
+            }
         } catch {
             self.showAlert(with: error.localizedDescription)
         }
@@ -33,6 +35,8 @@ final class Network: ObservableObject {
     
     private func showAlert(with text: String) {
         alertText = text
-        isShowAlert = true
+        DispatchQueue.main.async{
+            self.isShowAlert = true
+        }
     }
 }
