@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct ButtonView: View {
+    @State private var isPresentWebView = false
+    @AppStorage("status") var status = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            Button {
+                status = true
+            } label: {
+                Text("Tap me")
+                    .padding(.horizontal, 20)
+            }
+            .buttonStyle(.borderedProminent)
+        }
     }
 }
 

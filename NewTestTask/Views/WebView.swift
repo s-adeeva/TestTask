@@ -6,15 +6,56 @@
 //
 
 import SwiftUI
+import WebKit
 
-struct WebView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct WebView: UIViewRepresentable {
+    
+    let url: URL
+    
+    func makeUIView(context: Context) -> WKWebView {
+        let webView = WKWebView()
+        webView.navigationDelegate = context.coordinator
+        
+        // for handling swipe left gesture
+        let swipeLeftGesture = UISwipeGestureRecognizer(
+            target: context.coordinator,
+            action: #selector(context.coordinator.handleSwipeGesture(_:)))
+        swipeLeftGesture.direction = .left
+        webView.addGestureRecognizer(swipeLeftGesture)
+        
+        // for handling swipe right gesture
+        let swipeRightGesture = UISwipeGestureRecognizer(
+            target: context.coordinator,
+            action: #selector(context.coordinator.handleSwipeGesture(_:)))
+        swipeRightGesture.direction = .right
+        webView.addGestureRecognizer(swipeRightGesture)
+        
+        return webView
     }
-}
-
-struct WebView_Previews: PreviewProvider {
-    static var previews: some View {
-        WebView()
+    
+    func updateUIView(_ webView: WKWebView, context: Context) {
+        let request = URLRequest(url: url)
+        webView.load(request)
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+    
+    class Coordinator: NSObject, WKNavigationDelegate {
+        @objc func handleSwipeGesture(_ gesture: UISwipeGestureRecognizer) {
+            switch gesture.direction {
+            case .left:
+                if let webView = gesture.view as? WKWebView, webView.canGoForward {
+                    webView.goForward()
+                }
+            case .right:
+                if let webView = gesture.view as? WKWebView, webView.canGoBack {
+                    webView.goBack()
+                }
+            default:
+                break
+            }
+        }
     }
 }

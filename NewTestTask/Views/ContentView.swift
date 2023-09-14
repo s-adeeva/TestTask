@@ -13,20 +13,24 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            NavigationStack {
-                TabView {
-                    StorageView()
-                        .tabItem {
-                            Label("To Do", systemImage: "square.and.arrow.down")
-                        }
-                    NetworkView(viewModel: viewModel)
-                        .tabItem {
-                            Label("New facts", systemImage: "book.fill")
-                        }
-                    ButtonView()
-                        .tabItem {
-                            Label("Google", systemImage: "network")
-                        }
+            if status {
+                WebView(url: URL(string: "https://google.com")!)
+            } else {
+                NavigationStack {
+                    TabView {
+                        StorageView()
+                            .tabItem {
+                                Label("To Do", systemImage: "square.and.arrow.down")
+                            }
+                        NetworkView(viewModel: viewModel)
+                            .tabItem {
+                                Label("New facts", systemImage: "book.fill")
+                            }
+                        ButtonView()
+                            .tabItem {
+                                Label("Google", systemImage: "network")
+                            }
+                    }
                 }
             }
         }

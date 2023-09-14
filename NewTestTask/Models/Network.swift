@@ -19,7 +19,8 @@ final class Network: ObservableObject {
         guard let url = URL(string: "https://api.api-ninjas.com/v1/facts?limit=1") else { return }
         
         var urlRequest = URLRequest(url: url)
-        urlRequest.setValue("avNvG5iRNfjIvoVHU4Roww==JfRePOlBCsix1skl", forHTTPHeaderField: "X-Api-Key")
+        urlRequest.setValue("avNvG5iRNfjIvoVHU4Roww==JfRePOlBCsix1skl",
+                            forHTTPHeaderField: "X-Api-Key")
         
         do {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
